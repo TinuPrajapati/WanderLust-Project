@@ -1,0 +1,77 @@
+<style>
+  .search-btn i{
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .search-btn{
+    border:1px solid #fe424d ;
+    color: #fe424d;
+    padding:0 1rem;
+    border-radius: 25px;
+  }
+  .search-btn:hover{
+    background-color: #fe424d ;
+    color: #fff;
+    border: none;
+  }
+  .search-inp{
+    padding:0.5rem 1rem;
+    border-radius: 25px;
+    text-align: center;
+  }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Icon -->
+    <i class="fa-regular fa-compass"></i>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <!-- left side -->
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+
+      <!-- middle  -->
+      <div class="navbar-nav ms-auto">
+        <form class="d-flex" role="search">
+          <input class="form-control search-inp" type="search" placeholder="Search Destination">
+          <button class="btn btn-outline-success search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search 
+          </button>
+        </form>
+      </div>
+
+      <!-- right side -->
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Airbnb your home</a>
+        <% if(!currUser) {%>
+        <a class="nav-link" aria-current="page" href="/signup"
+          ><b>Sign Up</b></a
+        >
+        <a class="nav-link" href="/login"><b>Login</b></a>
+        <% }else{ %>
+        <a class="nav-link" href="/logout"><b>Logout</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- <script>
+  let inp=document.getElementsByClassName("search-inp");
+  inp.addEventListener("click",()=>{
+    inp.setAttribute("placeholder","")
+  })
+</script> -->
