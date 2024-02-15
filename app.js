@@ -15,7 +15,6 @@ const flash=require("connect-flash");
 const passport=require("passport");
 const localStrategy=require("passport-local");
 const User=require("./models/User");
-const Review = require("./models/review");
 const listingsRouter=require("./routes/listing");
 const reviewsRouter=require("./routes/review");
 const userRouter=require("./routes/user");
@@ -24,7 +23,6 @@ const userRouter=require("./routes/user");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 // css & js
-app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, "public")));
 // method-override
 app.use(methodOverride('_method'));
